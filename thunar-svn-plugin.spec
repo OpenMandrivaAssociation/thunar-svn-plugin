@@ -7,7 +7,7 @@ Group:		Graphical desktop/Xfce
 Url:		http://goodies.xfce.org/projects/thunar-plugins/thunar-svn-plugin
 Source0:	http://goodies.xfce.org/releases/thunar-svn-plugin/%{name}-%{version}.tar.bz2
 BuildRequires:	thunar-devel
-BuildRequires:	svn-devel
+BuildRequires:	%{_lib}svn-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
