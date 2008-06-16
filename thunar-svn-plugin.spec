@@ -28,11 +28,15 @@ A svn plugin for Thunar file manager.
 
 %find_lang %{name}
 
+%if %mdkversion < 200900
 %post
 %update_icon_cache hicolor
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_icon_cache hicolor
+%endif
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
