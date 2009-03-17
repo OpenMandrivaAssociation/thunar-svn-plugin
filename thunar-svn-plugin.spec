@@ -1,22 +1,24 @@
 Summary:	A svn plugin for Thunar file manager
 Name:		thunar-svn-plugin
-Version:	0.0.2
-Release:	%mkrel 2
+Version:	0.0.3
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 Url:		http://goodies.xfce.org/projects/thunar-plugins/thunar-svn-plugin
 Source0:	http://goodies.xfce.org/releases/thunar-svn-plugin/%{name}-%{version}.tar.bz2
 BuildRequires:	thunar-devel
-BuildRequires:	%{_lib}svn-devel
+BuildRequires:	subversion-devel
+BuildRequires:	gtk+2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 A svn plugin for Thunar file manager.
 
 %prep
-%setup -q %{name}-%{version}
+%setup -q
 
 %build
+%define Werror_cflags %nil
 %configure2_5x
 
 %make
