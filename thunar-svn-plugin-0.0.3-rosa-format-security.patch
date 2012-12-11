@@ -1,0 +1,87 @@
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-blame.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-blame.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-blame.c
+@@ -73,7 +73,7 @@ static gpointer blame_thread (gpointer u
+ 		tsh_blame_dialog_done (dialog);
+ 
+     error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Blame failed"));
+-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), error_str);
++    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), "%s", error_str);
+     tsh_dialog_start(GTK_DIALOG(error), FALSE);
+ 		gdk_threads_leave();
+     g_free(error_str);
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-cleanup.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-cleanup.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-cleanup.c
+@@ -64,7 +64,7 @@ static gpointer cleanup_thread (gpointer
+     gdk_threads_enter();
+     gtk_widget_destroy(dialog);
+     dialog = gtk_message_dialog_new(NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _("Cleanup failed"));
+-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), error_str);
++    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), "%s", error_str);
+     tsh_dialog_start(GTK_DIALOG(dialog), TRUE);
+     gdk_threads_leave();
+     g_free(error_str);
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-log.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-log.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-log.c
+@@ -96,7 +96,7 @@ static gpointer log_thread (gpointer use
+ 		tsh_log_dialog_done (dialog);
+ 
+     error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Log failed"));
+-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), error_str);
++    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), "%s", error_str);
+     tsh_dialog_start(GTK_DIALOG(error), FALSE);
+     gdk_threads_leave();
+     g_free(error_str);
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-properties.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-properties.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-properties.c
+@@ -79,7 +79,7 @@ static gpointer properties_thread (gpoin
+       //tsh_properties_dialog_done (dialog);
+ 
+       error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Set property failed"));
+-      gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), error_str);
++      gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), "%s", error_str);
+       tsh_dialog_start(GTK_DIALOG(error), FALSE);
+       gdk_threads_leave();
+       g_free(error_str);
+@@ -102,7 +102,7 @@ static gpointer properties_thread (gpoin
+     tsh_properties_dialog_done (dialog);
+ 
+     error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Properties failed"));
+-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), error_str);
++    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), "%s", error_str);
+     tsh_dialog_start(GTK_DIALOG(error), FALSE);
+ 		gdk_threads_leave();
+     g_free(error_str);
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-relocate.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-relocate.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-relocate.c
+@@ -69,7 +69,7 @@ static gpointer relocate_thread (gpointe
+     gdk_threads_enter();
+     gtk_widget_destroy(dialog);
+     dialog = gtk_message_dialog_new(NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _("Relocate failed"));
+-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), error_str);
++    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), "%s", error_str);
+     tsh_dialog_start(GTK_DIALOG(dialog), TRUE);
+     gdk_threads_leave();
+     g_free(error_str);
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-status.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-status.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-status.c
+@@ -80,7 +80,7 @@ static gpointer status_thread (gpointer
+ 		tsh_status_dialog_done (dialog);
+ 
+     error = gtk_message_dialog_new(GTK_WINDOW(dialog), GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Status failed"));
+-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), error_str);
++    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(error), "%s", error_str);
+     tsh_dialog_start(GTK_DIALOG(error), FALSE);
+ 		gdk_threads_leave();
+     g_free(error_str);

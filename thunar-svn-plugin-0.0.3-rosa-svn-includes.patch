@@ -1,0 +1,24 @@
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-common.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-common.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-common.c
+@@ -34,6 +34,7 @@
+ #include <subversion-1/svn_pools.h>
+ #include <subversion-1/svn_fs.h>
+ #include <subversion-1/svn_time.h>
++#include <subversion-1/svn_props.h>
+ 
+ #include "tsh-dialog-common.h"
+ #include "tsh-login-dialog.h"
+Index: thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-properties-dialog.c
+===================================================================
+--- thunar-svn-plugin-0.0.3.orig/tsp-svn-helper/tsh-properties-dialog.c
++++ thunar-svn-plugin-0.0.3/tsp-svn-helper/tsh-properties-dialog.c
+@@ -25,6 +25,7 @@
+ #include <gtk/gtk.h>
+ 
+ #include <subversion-1/svn_client.h>
++#include <subversion-1/svn_props.h>
+ 
+ #include "tsh-common.h"
+ #include "tsh-properties-dialog.h"
