@@ -3,7 +3,7 @@
 Summary:	A svn plugin for Thunar file manager
 Name:		thunar-svn-plugin
 Version:	0.0.3
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 Url:		http://goodies.xfce.org/projects/thunar-plugins/thunar-svn-plugin
