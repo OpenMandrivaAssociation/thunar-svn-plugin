@@ -29,7 +29,7 @@ A svn plugin for Thunar file manager.
 %patch2 -p1
 
 %build
-sed -i -e 's/AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' configure.in
+sed -i -e 's/AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' configure.ac
 
 # required for patch0
 xdt-autogen
