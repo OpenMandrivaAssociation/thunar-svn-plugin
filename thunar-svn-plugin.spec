@@ -29,6 +29,8 @@ A svn plugin for Thunar file manager.
 %patch2 -p1
 
 %build
+sed -i -e 's/AM_CONFIG_HEADER/AM_CONFIG_HEADERS/' configure.in
+
 # required for patch0
 xdt-autogen
 
