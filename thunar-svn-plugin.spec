@@ -6,7 +6,7 @@ Version:	0.0.3
 Release:	6
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
-Url:		http://goodies.xfce.org/projects/thunar-plugins/thunar-svn-plugin
+Url:		https://goodies.xfce.org/projects/thunar-plugins/thunar-svn-plugin
 Source0:	http://archive.xfce.org/src/thunar-plugins/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch0:		thunar-svn-plugin-0.0.3-rosa-thunarx-2.patch
 Patch1:		thunar-svn-plugin-0.0.3-rosa-svn-includes.patch
