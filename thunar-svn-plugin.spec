@@ -11,6 +11,11 @@ Source0:	http://archive.xfce.org/src/thunar-plugins/%{name}/%{url_ver}/%{name}-%
 Patch0:		thunar-svn-plugin-0.0.3-rosa-thunarx-2.patch
 Patch1:		thunar-svn-plugin-0.0.3-rosa-svn-includes.patch
 Patch2:		thunar-svn-plugin-0.0.3-rosa-format-security.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(thunarx-2)
 BuildRequires:	pkgconfig(thunar-vfs-1)
 BuildRequires:	subversion-devel
